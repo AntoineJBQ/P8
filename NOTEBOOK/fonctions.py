@@ -336,7 +336,7 @@ def reduire_dimension_pca(df, n_components=None):
     columns = [f"PC{i+1}" for i in range(components.shape[1])]
     df_pca = pd.DataFrame(components, columns=columns)
     return pd.concat([df.drop(columns=df.select_dtypes(include=[np.number]).columns), df_pca], axis=1)
-tage de valeurs considérées comme des outliers en utilisant le Z-score au seuil 2 dans la colonne '{column}' est {outliers_percentage}%")
+    print(f"Le pourcentage de valeurs considérées comme des outliers en utilisant le Z-score au seuil {seuil} dans la colonne '{col}' est {outliers_percentage}%")
 
 def plot_skewness_kurtosis(data, column):
     skewness = data[column].skew()
